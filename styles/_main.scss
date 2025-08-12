@@ -1,0 +1,84 @@
+@use "./variables";
+@use "./mixin";
+
+main {
+  background-color: variables.$grayColor;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  overflow-y: auto;
+
+  // Header
+  header {
+    background-color: variables.$darkColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+
+    // Form
+    form {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 0 8px variables.$textColor;
+      border-radius: 5px;
+
+      @include mixin.mobile {
+        max-width: unset;
+      }
+
+      // Input
+      input {
+        background-color: transparent;
+        padding: 15px;
+        width: 100%;
+      }
+
+      // Button
+      button {
+        background: none;
+        color: variables.$textColor;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 15px;
+      }
+    }
+
+    // Navigation
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      a {
+        white-space: nowrap;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        color: #ddd;
+        &:hover {
+          color: variables.$textColor;
+        }
+      }
+
+      @include mixin.mobile {
+        display: none;
+      }
+    }
+  }
+
+  // Music Wrapper
+.music-wrapper {
+    // Title
+    h1 {
+        margin: 20px 0;
+    }
+
+   
+}
+}

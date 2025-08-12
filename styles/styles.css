@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+aside {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 950px) {
+  aside {
+    padding: 20px 10px;
+  }
+}
+@media (max-width: 950px) {
+  aside span {
+    display: none;
+  }
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1db954;
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 30px;
+}
+aside nav a {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+aside nav a:hover {
+  background-color: #1db954;
+}
+@media (max-width: 950px) {
+  aside nav a i {
+    font-size: 23px;
+  }
+}
+
+main {
+  background-color: #282828;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+main header {
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 10px;
+}
+main header form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.78);
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  main header form {
+    max-width: unset;
+  }
+}
+main header form input {
+  background-color: transparent;
+  padding: 15px;
+  width: 100%;
+}
+main header form button {
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 15px;
+}
+main header nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+main header nav a {
+  white-space: nowrap;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #ddd;
+}
+main header nav a:hover {
+  color: rgba(255, 255, 255, 0.78);
+}
+@media (max-width: 768px) {
+  main header nav {
+    display: none;
+  }
+}
+main .music-wrapper h1 {
+  margin: 20px 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.78);
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 120px);
+}/*# sourceMappingURL=styles.css.map */
