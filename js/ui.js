@@ -4,12 +4,16 @@ class UI {
   constructor() {
     // Html'den Js'e elemanları çekme
     this.musicList = document.querySelector(".music-list");
+    this.form=document.querySelector("form");
   }
   // Şarkı kartlarını renderlayacak fonksiyon
   renderCard(songs) {
 
     // Bir tane card elemanı oluştur
     // Bu fonksiyondan beklentimiz api'dan alınan her şarkı elemanı için arayüze bir şarkı kartı render etmesi
+
+// musicList'in html içeriği sıfırla
+this.musicList.innerHTML ="";
 
     songs.forEach((song) => {
       // Bir tane card elemanı oluştur

@@ -86,6 +86,7 @@ main {
       display: grid;
        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
        gap: 20px;
+     
       .card {
         background-color: variables.$darkColor;
         padding: 10px;
