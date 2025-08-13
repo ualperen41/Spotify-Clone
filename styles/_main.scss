@@ -39,7 +39,7 @@ main {
         background-color: transparent;
         padding: 15px;
         width: 100%;
-         color: variables.$textColor;
+        color: variables.$textColor;
       }
 
       // Button
@@ -84,9 +84,9 @@ main {
     .music-list {
       height: 100%;
       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-       gap: 20px;
-     
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+
       .card {
         background-color: variables.$darkColor;
         padding: 10px;
@@ -94,7 +94,7 @@ main {
         flex-direction: column;
         gap: 10px;
         border-radius: 10px;
-         cursor: pointer;
+        cursor: pointer;
 
         &:hover .play {
           opacity: 1;
@@ -102,8 +102,8 @@ main {
         }
         // Image Wrapper
         figure {
-            position: relative;
-            // Image
+          position: relative;
+          // Image
           img {
             width: 100%;
             border-radius: 10px;
@@ -123,23 +123,27 @@ main {
             place-items: center;
             font-size: 23px;
             cursor: pointer;
-           transition: all 0.3s ease;
+            transition: all 0.3s ease;
 
-           &:hover {
-            scale: 1.1;
-            transform: rotate(360deg);
-            background-color: #106d31;
-           }
+            i {
+              pointer-events: none;
+            }
+
+            &:hover {
+              scale: 1.1;
+              transform: rotate(360deg);
+              background-color: #106d31;
+            }
           }
         }
 
         // Music Info
         .music-info {
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            gap: 10px;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          gap: 10px;
         }
       }
     }

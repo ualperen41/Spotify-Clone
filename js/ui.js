@@ -5,6 +5,7 @@ class UI {
     // Html'den Js'e elemanları çekme
     this.musicList = document.querySelector(".music-list");
     this.form=document.querySelector("form");
+    this.musicTitle = document.querySelector("#music-title");
   }
   // Şarkı kartlarını renderlayacak fonksiyon
   renderCard(songs) {

@@ -38,8 +38,13 @@ ui.form.addEventListener("submit",async (e) => {
   // Fonksiyonu durdur
   return;
  }
+
   // Ekrana loader bas
   ui.renderLoader();
+
+// Sayfa Başlığı güncelle
+ui.musicTitle.textContent = `${query} için sonuçlar`;
+
  // Formun gönderilmesi sonucunda elde edilen query değeri ile api e istek at
  const songs = await api.getSearchMusic(query);
 
@@ -47,3 +52,10 @@ ui.form.addEventListener("submit",async (e) => {
 ui.renderCard(songs);
 });
 
+// ! Oynat Butonuna tıklanıldığında
+ui.musicList.addEventListener("click",(e) => {
+ if (e.target.className === "play") {
+  // oynatılan şarkının bilgilerine eriş
+  console.log(api);
+ }
+})

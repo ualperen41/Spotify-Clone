@@ -159,6 +159,9 @@ main .music-wrapper .music-list .card figure .play {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+main .music-wrapper .music-list .card figure .play i {
+  pointer-events: none;
+}
 main .music-wrapper .music-list .card figure .play:hover {
   scale: 1.1;
   transform: rotate(360deg);
