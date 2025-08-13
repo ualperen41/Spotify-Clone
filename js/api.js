@@ -53,7 +53,7 @@ try{
     // Api den gelen veriyi JSON dan Js nesnesine çevir
     const data =await response.json();
     // Api'dan gelen ve Js içerisinde kullanılabilecek şekilde formatlanan değeri fonksiyon çağırıldığında return et
-      return formatted;
+     
    return data.tracks.hits.map((item) => 
       item.track
     );

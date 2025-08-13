@@ -38,7 +38,8 @@ ui.form.addEventListener("submit",async (e) => {
   // Fonksiyonu durdur
   return;
  }
-
+  // Ekrana loader bas
+  ui.renderLoader();
  // Formun gönderilmesi sonucunda elde edilen query değeri ile api e istek at
  const songs = await api.getSearchMusic(query);
 
