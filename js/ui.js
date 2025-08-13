@@ -40,6 +40,36 @@ this.musicList.appendChild(card);
      
     });
   }
+
+  // Loader render edicek fonksiyon
+  renderLoader () {
+     // Bu fonksiyondan beklentimiz music list kısmında bir loader render etmesi
+
+
+      // musicList kısmında bir loader render et
+      this.musicList.innerHTML =` 
+     
+      <div class="loader-wrapper">
+<div class="loader">
+  <div class="cell d-0"></div>
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+  
+  
+  <div class="cell d-2"></div>
+  <div class="cell d-3"></div>
+  
+  
+  <div class="cell d-3"></div>
+  <div class="cell d-4"></div>
+
+  
+</div>
+</div>`;
+  }
 }
 
 export default UI;

@@ -8,6 +8,10 @@ const ui = new UI();
 
 // ! Sayfa Yüklendiğinde
 document.addEventListener("DOMContentLoaded", async () => {
+
+// Loaaderı render et
+ui.renderLoader();
+
   // Api'a istek at ve popüler müzikleri al
  const songs= await api.getPopularMusics();
  
