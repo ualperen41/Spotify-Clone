@@ -9,3 +9,9 @@
         @content;
     }
 }
+
+@mixin desktop {
+    @media (max-width:1200px) {
+        @content;
+    }
+}

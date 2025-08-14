@@ -175,6 +175,74 @@ main .music-wrapper .music-list .card .music-info {
   gap: 10px;
 }
 
+.player {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px 0;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .player {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+.player .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+.player .info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player .info h5 {
+  font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.player .audio-wrapper {
+  width: 100%;
+}
+.player .audio-wrapper audio {
+  width: 100%;
+}
+.player .icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  margin-right: 20px;
+  justify-content: flex-end;
+}
+.player .icons i {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.player .icons i:hover {
+  background: rgb(57, 57, 57);
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate {
+  animation: turn 4s infinite linear;
+}
+
 * {
   margin: 0;
   padding: 0;

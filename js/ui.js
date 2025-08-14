@@ -4,33 +4,33 @@ class UI {
   constructor() {
     // Html'den Js'e elemanları çekme
     this.musicList = document.querySelector(".music-list");
-    this.form=document.querySelector("form");
+    this.form = document.querySelector("form");
     this.musicTitle = document.querySelector("#music-title");
+    this.player = document.querySelector(".player");
   }
   // Şarkı kartlarını renderlayacak fonksiyon
   renderCard(songs) {
-
     // Bir tane card elemanı oluştur
     // Bu fonksiyondan beklentimiz api'dan alınan her şarkı elemanı için arayüze bir şarkı kartı render etmesi
 
-// musicList'in html içeriği sıfırla
-this.musicList.innerHTML ="";
+    // musicList'in html içeriği sıfırla
+    this.musicList.innerHTML = "";
 
     songs.forEach((song) => {
       // Bir tane card elemanı oluştur
       const card = document.createElement("div");
       // Oluşturulan card elemanına "card" classı ekle
-    //   card.classList.add("card");
-    card.className = "card";
+      //   card.classList.add("card");
+      card.className = "card";
 
- // Oluşturulan,classı belirlenen card elemanın Html içeriğini belirle
- card.innerHTML =`
+      // Oluşturulan,classı belirlenen card elemanın Html içeriğini belirle
+      card.innerHTML = `
               <figure>
                 <img
                   src="${song.images.coverarthq}"
                   alt="music-image"
                 />
-                <div class="play">
+                <div class="play" data-id="${song.key}">
                   <i class="bi bi-play-fill"></i>
                 </div>
               </figure>
@@ -40,19 +40,17 @@ this.musicList.innerHTML ="";
                 <h4>${song.subtitle}</h4>
               </div>
             `;
-// Oluşturulan,class eklemesi yapılan ve Html içeriği belirlenen card'ları arayüze ekle
-this.musicList.appendChild(card);
-     
+      // Oluşturulan,class eklemesi yapılan ve Html içeriği belirlenen card'ları arayüze ekle
+      this.musicList.appendChild(card);
     });
   }
 
   // Loader render edicek fonksiyon
-  renderLoader () {
-     // Bu fonksiyondan beklentimiz music list kısmında bir loader render etmesi
+  renderLoader() {
+    // Bu fonksiyondan beklentimiz music list kısmında bir loader render etmesi
 
-
-      // musicList kısmında bir loader render et
-      this.musicList.innerHTML =` 
+    // musicList kısmında bir loader render et
+    this.musicList.innerHTML = ` 
      
       <div class="loader-wrapper">
 <div class="loader">
@@ -74,6 +72,59 @@ this.musicList.appendChild(card);
   
 </div>
 </div>`;
+  }
+
+  // player alanını dinamik olarak ekrana basıcak fonksiyon
+  renderPlayer(music) {
+    console.log(music);
+    this.player.innerHTML = `
+      <div class="info">
+        <img id ="music-image"
+          src="${music.images.coverart}"
+          alt="music-image"
+        />
+
+        <div>
+          <h5 title="${music.title}">${music.title}</h5>
+          <p>${music.subtitle}</p>
+        </div>
+      </div>
+      
+      <div class ="audio-wrapper">
+      <audio
+        src="${music.hub.actions[1].uri}"
+        controls
+      ></audio>
+      </div>
+
+    
+      <div class="icons">
+        <i class="bi bi-apple-music"></i>
+        <i class="bi bi-music-note-list"></i>
+        <i class="bi bi-pc-display"></i>
+      </div>`;
+
+      // audio elementine eriş
+    const audioElement = document.querySelector("audio");
+   // ses seviyesini düşür
+   audioElement.volume = 0.05;
+   // otomatik oynatmayı aç
+   audioElement.autoplay = true;
+     // müzik oynatıldığına animasyonu çalıştır
+    audioElement.addEventListener("play", () => {
+      // playerdaki resme eriş
+      const image = document.querySelector("#music-image");
+
+      // resme animasyonu başlatan class'ı ekle
+      image.classList.add("animate");
+    });
+
+  audioElement.addEventListener("pause", () => {
+    // playerdaki resme eriş
+    const image = document.querySelector("#music-image");
+    //resimden animasyonu başlatan classı kaldır
+    image.classList.remove("animate");
+  })
   }
 }
 

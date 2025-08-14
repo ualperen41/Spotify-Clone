@@ -10,8 +10,8 @@ class API {
     this.options = {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "e52e3bfef4msh2b3dc66d0cfb4a8p16624ejsn1c91d9af0240",
-        "x-rapidapi-host": "shazam.p.rapidapi.com",
+       'x-rapidapi-key': 'fc3ff5bfe6msh6f9311aad68e7b2p157cd3jsn9c5007e153fe',
+		'x-rapidapi-host': 'shazam.p.rapidapi.com',
       },
     };
     // müzik verisi
@@ -24,7 +24,8 @@ class API {
     try {
       // Api isteği at
       const response = await fetch(
-        `${this.baseUrl}/search?term=neffex`,
+        `${this.baseUrl}/search?term=inna
+        }`,
         this.options
       );
 
@@ -35,7 +36,7 @@ class API {
 
       // class'ın içerisine api'den gelen müzikleri kaydet
       this.musics = formatted;
-
+     
       // Elde edilen veriyi proje içerisinde kullanacağımız formata getirmek için dönüştür
       return formatted;
     } catch (error) {
@@ -59,9 +60,14 @@ class API {
 
       // Api den gelen veriyi JSON dan Js nesnesine çevir
       const data = await response.json();
-      // Api'dan gelen ve Js içerisinde kullanılabilecek şekilde formatlanan değeri fonksiyon çağırıldığında return et
 
-      return data.tracks.hits.map((item) => item.track);
+       // müzik verisini formatla
+      const formatted = data.tracks.hits.map((item) => item.track);
+      // class'ın içerisine api den gelen müzikleri kaydet
+       this.musics = formatted;
+      // Api'dan gelen ve Js içerisinde kullanılabilecek şekilde formatlanan değeri fonksiyon çağırıldığında return et
+    
+     return formatted;
     } catch (error) {
       // Kullanıcıya bildirimde bulun
       alert(

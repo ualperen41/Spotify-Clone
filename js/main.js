@@ -55,7 +55,11 @@ ui.renderCard(songs);
 // ! Oynat Butonuna tıklanıldığında
 ui.musicList.addEventListener("click",(e) => {
  if (e.target.className === "play") {
-  // oynatılan şarkının bilgilerine eriş
-  console.log(api);
+  // oynatılan şarkının id eriş
+   const id = e.target.dataset.id;
+ // oynatılacak şarkının bütün verilerine eriş
+     const music = api.musics.find((music) => music.key == id);
+  // player arayüzünü güncelle
+  ui.renderPlayer(music);
  }
-})
+});
