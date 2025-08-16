@@ -24,7 +24,7 @@ class API {
     try {
       // Api isteği at
       const response = await fetch(
-        `${this.baseUrl}/search?term=inna
+        `${this.baseUrl}/search?term=Bruno Mars
         }`,
         this.options
       );
